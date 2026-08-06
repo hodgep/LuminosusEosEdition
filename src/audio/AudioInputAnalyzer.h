@@ -12,7 +12,6 @@
 #include <QPointer>
 #include <QtMultimedia/QAudioInput>
 #include <QtMultimedia/QAudioFormat>
-#include <QLinkedList>
 #include <QColor>
 
 #include <vector>
@@ -406,7 +405,7 @@ protected:
     HighResTime::time_point_t m_lastBpmDetection;  //!< time of last successful BPM detection
     bool m_detectBpm;  //!< true if BPM should be analyzed
 
-    QLinkedList<BeatAgent> m_agents; //!< the IOI Clusters identified from the intervalls
+    std::list<BeatAgent> m_agents; //!< the IOI Clusters identified from the intervalls
     Qt3DCore::QCircularBuffer<float> m_lastIntervals; //!< the last bpm values stored as their interval, to achieve smoothing
 
     bool m_isRecordingSpeech;  //!< true if this input is currently used to record speech
