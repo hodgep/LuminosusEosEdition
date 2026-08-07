@@ -85,18 +85,18 @@ static const int SHORT_MAX_FFT_VALUE = 1;
 static const int AGC_AVERAGING_LENGTH = SPECTRUM_UPDATE_RATE*2;  // samples
 
 // headroom to leave when using AGC [0...1]
-static const float AGC_HEADROOM = 0.1;  // 10%
+static const float AGC_HEADROOM = float(0.1);  // 10%
 
 // min value for AGC to be active == max value of noise [0...1]
-static const float AGC_NOISE_THRESHOLD = 0.1; // 10%
+static const float AGC_NOISE_THRESHOLD = float(0.1); // 10%
 
 // amount to increase the gain per frame when gain is too low
 // i.e. 1 / <frames needed to increase the gain from 0 to 1>
-static const float AGC_INCREMENT_STEPSIZE = 1.0 / (3*SPECTRUM_UPDATE_RATE);  // 3s * SPECTRUM_UPDATE_RATE
+static const float AGC_INCREMENT_STEPSIZE = float(0.1 / (3*SPECTRUM_UPDATE_RATE));  // 3s * SPECTRUM_UPDATE_RATE
 
 // amount to decrease the gain per frame when gain is too high
 // i.e. 1 / <frames needed to decrease the gain from 1 to 0>
-static const float AGC_DECREMENT_STEPSIZE = 1.0 / (1*SPECTRUM_UPDATE_RATE);  // 1s * SPECTRUM_UPDATE_RATE
+static const float AGC_DECREMENT_STEPSIZE = float(0.1 / (1*SPECTRUM_UPDATE_RATE));  // 1s * SPECTRUM_UPDATE_RATE
 
 // minimum gain of AGC
 static const float AGC_MIN_GAIN = 0.5;

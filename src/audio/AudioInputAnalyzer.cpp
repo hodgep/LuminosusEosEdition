@@ -15,7 +15,7 @@ inline float msToBPM(const float ms) {
 }
 
 inline int frequencyToIndex(const int frequency) {
-    return SHORT_NUM_SAMPLES * frequency / AUDIO_SAMPLING_RATE;
+    return int(SHORT_NUM_SAMPLES) * frequency / AUDIO_SAMPLING_RATE;
 }
 
 inline int framesToMs(const int frames) {

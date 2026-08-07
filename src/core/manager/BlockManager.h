@@ -74,7 +74,7 @@ public slots:
      * @brief getBlockInstanceCount
      * @return number of block instances in this project
      */
-    int getBlockInstanceCount() const { return m_currentBlocks.size(); }
+    size_t getBlockInstanceCount() const { return m_currentBlocks.size(); }
 
     /**
      * @brief updateBlockVisibility sets "visible" property of blocks that are not in the
