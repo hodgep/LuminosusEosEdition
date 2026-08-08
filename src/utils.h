@@ -104,8 +104,8 @@ template<typename T>
 QString serialize(const T& x)
 {
 	QByteArray ba;
-	QDataStream s(&ba, QIODevice::WriteOnly);
-	s << x;
+    QDataStream s(&ba, QIODeviceBase::WriteOnly);
+    s << x;
 	QString str = QString::fromLatin1(ba.toBase64());
 	return str;
 }
@@ -114,8 +114,8 @@ template<typename T>
 T deserialize(const QString& str)
 {
 	QByteArray ba = QByteArray::fromBase64(str.toLatin1());
-	QDataStream s(&ba, QIODevice::ReadOnly);
-	T res; s >> res;
+    QDataStream s(&ba, QIODeviceBase::ReadOnly);
+    T res; s >> res;
 	return res;
 }
 
