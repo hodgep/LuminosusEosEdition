@@ -511,7 +511,7 @@ void SpeechInputAnalyzer::createSimplifiedSpectrumFromRawSpectrum() {
     */
 
     // push spectrum to spectrum history with move semantic:
-    m_spectrumHistory.push_back(move(simplifiedSpectrum));
+    m_spectrumHistory.push_back(std::move(simplifiedSpectrum));
     // Attention: because of move semantic simplifiedSpectrum is now unusable!
     emit spectrumChanged();
 }
